@@ -1,0 +1,29 @@
+# These variables are the environment specific variables, and should be placed in environment/staging/staging.tfvars (for example, if your environ was "staging")
+# It would be duplicated in "production" as "environment/production/production.tfvars" with the production settings
+
+cidr_prefix = "two_block_cidr_prefix_for_the_vpc_such_as_10.20"
+
+my_ip = "your_external_ip_for_srv_security_group_ssh_testing"
+
+db_name = "name_for_the_rancher_db"
+db_username = "alphanumeric_db_username"
+db_password = "db_password"
+db_class = "db_class_such_as_db.t2.micro"
+db_storage = "amount_for_gb_of_db_storage"
+db_backup_retention = "amount_of_days_to_keep_db_backups"
+db_multi_az = "true_or_false_for_multi_or_single_az"
+db_final_snapshot = "true_or_false_for_yes_or_no_to_skip_final_snapshot"
+
+srv_size = "rancher_server_instance_size_such_as_t2.medium"
+
+hst_size = "rancher_host_instance_size_such_as_t2.small"
+hst_max = "max_size_for_the_autoscaling_group"
+hst_min = "min_size_for_the_autoscaling_group"
+hst_des = "desired_size_for_the_autoscaling_group"
+reg_token = "rancher_hosts_registration_token"
+
+# Note, we are assuming you might want different usernames/passwords in each environment.  If not, this block could go into terraform.tfvars
+
+rancher_admin_name = "your_name"
+rancher_admin_username = "an_administrator_username"
+rancher_admin_password = "rancher_admin_password"
